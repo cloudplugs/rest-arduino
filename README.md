@@ -8,7 +8,7 @@ Documentation at https://docs.cloudplugs.com/rest-arduino/html
 
 See the LICENSE file for more details.
 
-Copyright 2014 CloudPlugs Inc. http://www.cloudplugs.com
+Copyright 2015 CloudPlugs Inc. http://www.cloudplugs.com
 
 ## Dependencies
 
