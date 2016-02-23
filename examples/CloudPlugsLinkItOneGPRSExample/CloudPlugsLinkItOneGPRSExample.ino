@@ -14,19 +14,19 @@ void setup() {
 	// initialize serial communications at 9600 bps
 	Serial.begin(9600);
 
-  // connection state
-  boolean notConnected = true;
+	// connection state
+	boolean notConnected = true;
 
-  // Start GPRS connection
-  Serial.println("Attach to GPRS network by auto-detect APN setting");
-  while (notConnected) {
-    if (!LGPRS.attachGPRS()) {
-      Serial.println("Not connected");
-      delay(1000);
-    } else {
-      notConnected = false;
-    }
-  }
+	// Start GPRS connection
+	Serial.println("Attach to GPRS network by auto-detect APN setting");
+	while (notConnected) {
+		if (!LGPRS.attachGPRS()) {
+			Serial.println("Not connected");
+			delay(1000);
+		} else {
+			notConnected = false;
+		}
+	}
 
 	Serial.println("Connected to GPRS network");
 
@@ -43,7 +43,7 @@ void debug(const char* tag, bool res, String& response){
 }
 
 void loop() {
-  Serial.print("LOOP: ");
+	Serial.print("LOOP: ");
 
 	String body = "{\"data\":";
 	body.concat(getTemp());

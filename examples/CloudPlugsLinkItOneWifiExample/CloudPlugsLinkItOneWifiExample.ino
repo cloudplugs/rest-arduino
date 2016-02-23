@@ -36,16 +36,16 @@ void setup() {
 	// initialize serial communications at 9600 bps
 	Serial.begin(9600);
 
-  // initializes LinkIt ONE WiFi module
-  LWiFi.begin();
+	// initializes LinkIt ONE WiFi module
+	LWiFi.begin();
 
 	/* Attempt to connect to Wifi network */
-  while (status != 0) {
-    Serial.print("Attempting to connect to SSID: ");
-    Serial.println(ssid);
-    status = LWiFi.connect(ssid, LWiFiLoginInfo(wmode, pass));
-    delay(10000);
-  }
+	while (status != 0) {
+		Serial.print("Attempting to connect to SSID: ");
+		Serial.println(ssid);
+		status = LWiFi.connect(ssid, LWiFiLoginInfo(wmode, pass));
+		delay(10000);
+	}
 
 	Serial.println("Connected to wifi");
 	printWifiStatus();
@@ -68,7 +68,7 @@ void loop() {
 	Serial.print(rssi);
 	Serial.println(" dBm \n");
 
-  	Serial.print("LOOP: ");
+	Serial.print("LOOP: ");
 
 	String body = "{\"data\":";
 	body.concat(getTemp());

@@ -80,7 +80,7 @@ void loop() {
 	Serial.print(rssi);
 	Serial.println(" dBm \n");
 
-  	Serial.print("LOOP: ");
+	Serial.print("LOOP: ");
 
 	String body = "{\"data\":";
 	body.concat(getTemp());

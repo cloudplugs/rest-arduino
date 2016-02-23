@@ -37,45 +37,45 @@ void setup() {
 	// initialize serial communications at 9600 bps
 	Serial.begin(9600);
 
-  // initializes LinkIt ONE WiFi module
-  LWiFi.begin();
+	// initializes LinkIt ONE WiFi module
+	LWiFi.begin();
 
 	/* Attempt to connect to Wifi network */
-  while (status != 0) {
-    Serial.print("Attempting to connect to SSID: ");
-    Serial.println(ssid);
-    status = LWiFi.connect(ssid, LWiFiLoginInfo(wmode, pass));
-    delay(10000);
-  }
+	while (status != 0) {
+		Serial.print("Attempting to connect to SSID: ");
+		Serial.println(ssid);
+		status = LWiFi.connect(ssid, LWiFiLoginInfo(wmode, pass));
+		delay(10000);
+	}
 
 	Serial.println("Connected to wifi");
 	printWifiStatus();
 
-  response = "";
-  bool res = client.enrollProduct("{\"model\":\""AUTH_MODEL"\",\"hwid\":\""AUTH_HWID"\", \"pass\":\""AUTH_PASS"\"}", response);
-  debug("ENROLL", res, response);
+	response = "";
+	bool res = client.enrollProduct("{\"model\":\""AUTH_MODEL"\",\"hwid\":\""AUTH_HWID"\", \"pass\":\""AUTH_PASS"\"}", response);
+	debug("ENROLL", res, response);
 
-  char *plugauth = extract_plugid(response.c_str(), "auth");
-  Serial.print("plugauth: ");
-  Serial.println(plugauth);
+	char *plugauth = extract_plugid(response.c_str(), "auth");
+	Serial.print("plugauth: ");
+	Serial.println(plugauth);
 
-  char *plugid = extract_plugid(response.c_str(), "id");
-  Serial.print("plugid: ");
-  Serial.println(plugid);
+	char *plugid = extract_plugid(response.c_str(), "id");
+	Serial.print("plugid: ");
+	Serial.println(plugid);
 
-  client.setAuth(plugid, plugauth, false);
+	client.setAuth(plugid, plugauth, false);
 }
 
 char *extract_plugid(const char* s, char *needle) {
-  char *start = strstr(s ,needle);
-  if (start) {
-    start = strchr(start, ':');
-    start = strchr(start, '\"');
-    start++;
-    char *end = strchr(start, '\"');
-    *(end) = '\0';
-  }
-  return start;
+	char *start = strstr(s ,needle);
+	if (start) {
+		start = strchr(start, ':');
+		start = strchr(start, '\"');
+		start++;
+		char *end = strchr(start, '\"');
+		*(end) = '\0';
+	}
+	return start;
 }
 
 void debug(const char* tag, bool res, String& response){
@@ -92,7 +92,7 @@ void loop() {
 	Serial.print(rssi);
 	Serial.println(" dBm \n");
 
- 	Serial.print("LOOP: ");
+	Serial.print("LOOP: ");
 
 	String body = "{\"data\":";
 	body.concat(getTemp());
