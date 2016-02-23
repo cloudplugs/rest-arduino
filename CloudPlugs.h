@@ -1,3 +1,8 @@
+#include <String.h>
+#if defined(ARDUINO_MTK_ONE) || defined(ARDUINO_ARCH_ARM)
+#include "Arduino.h"
+#endif
+
 #ifndef _CP_H_
 #define _CP_H_
 
