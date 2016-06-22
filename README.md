@@ -8,7 +8,7 @@ Documentation at https://docs.cloudplugs.com/rest-arduino/html
 
 See the LICENSE file for more details.
 
-Copyright 2015 CloudPlugs Inc. http://www.cloudplugs.com
+Copyright 2016 CloudPlugs Inc. http://www.cloudplugs.com
 
 ## Dependencies
 
@@ -16,7 +16,7 @@ Copyright 2015 CloudPlugs Inc. http://www.cloudplugs.com
 
 ## Installation
 
-1. Download the latest version of the library from https://github.com/cloudplugs/arduino/releases and save the file somewhere
+1. Download the latest version of the library from https://github.com/cloudplugs/rest-arduino/archive/master.zip and save the file somewhere
 1. In the Arduino IDE, go to the Sketch -> Import Library -> Add Library... menu option
 1. Find the zip file that you saved in the first step, and choose that
 1. Check that it has been successfully added by opening the Sketch -> Import Library menu.  You should now see CloudPlugs listed among the available libraries.
